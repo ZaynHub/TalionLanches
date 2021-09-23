@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TalionLanches.Context;
+using TalionLanches.Repositories;
+using TalionLanches.Repositories.Interfaces;
 
 namespace TalionLanches {
   public class Startup {
@@ -22,6 +24,9 @@ namespace TalionLanches {
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services) {
       services.AddDbContext<AppDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+      services.AddTransient<ICategoriaRepository, CategoriaRepository>();
+      services.AddTransient<ILancheRepository, LancheRepository>();
+
       services.AddControllersWithViews();
     }
 
