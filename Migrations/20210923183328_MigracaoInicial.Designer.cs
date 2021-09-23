@@ -9,7 +9,7 @@ using TalionLanches.Context;
 namespace TalionLanches.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210923175726_MigracaoInicial")]
+    [Migration("20210923183328_MigracaoInicial")]
     partial class MigracaoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
